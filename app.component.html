@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoginDefesaCivil</title>
+  <link rel="stylesheet" href="app.component.css">
+</head>
+<body>
+  <div class="container">
+    <div class="top-image-container">
+      <img src="../assets/logofavcon3.png" alt="imgdefesa" class="top-image">
+    </div>
+    <div class="buttonsForm">
+      <div class="btnColor" [ngStyle]="{ 'left.px': formState === 'signin' ? 0 : 110 }"></div>
+      <button id="btnSignin" (click)="changeFormState('signin')">Entrar</button>
+      <button id="btnSignup" (click)="changeFormState('signup')">Cadastrar</button>
+    </div>
+  
+    <form id="signin" [@slideInOut]="formState">
+      <input type="text" placeholder="Matricula" required />
+      <i class="fas fa-envelope iEmail"></i>
+      <input type="password" placeholder="Senha" required />
+      <i class="fas fa-lock iPassword"></i>
+      <div class="divCheck">
+        <input type="checkbox" />
+        <span>Lembrar senha</span>
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+  
+    <form id="signup" [@slideInOut]="formState">
+      <input type="text" placeholder="Email" required />
+      <i class="fas fa-envelope iEmail"></i>
+      <input type="password" placeholder="Senha" required />
+      <i class="fas fa-lock iPassword"></i>
+      <input type="password" placeholder="Confirmar senha" required />
+      <i class="fas fa-lock iPassword2"></i>
+      <div class="divCheck">
+        <input type="checkbox" required />
+        <span>Li os termos</span>
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+  
+  
+  
+
+  <script src="app.component.ts"></script>
+</body>
+</html>
